@@ -5,4 +5,9 @@ export default defineNuxtConfig({
     '@nuxthq/ui',
     '@nuxtjs/eslint-module',
   ],
+  typescript: {
+    shim: true,
+    strict: true,
+    typeCheck: true,
+  },
 })

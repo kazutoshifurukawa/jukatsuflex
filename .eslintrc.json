@@ -6,7 +6,8 @@
     "extends": [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:vue/vue3-essential"
+        "plugin:vue/vue3-essential",
+        "@nuxtjs/eslint-config-typescript"
     ],
     "parserOptions": {
         "ecmaVersion": "latest",
@@ -18,9 +19,16 @@
         "vue"
     ],
     "rules": {
+        "comma-dangle": [
+            "error",
+            "always-multiline"
+        ],
         "indent": [
             "error",
-            "tab"
+            2,
+            {
+                "SwitchCase": 1
+            }
         ],
         "linebreak-style": [
             "error",
