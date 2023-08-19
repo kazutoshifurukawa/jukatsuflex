@@ -2,10 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   srcDir: 'src/',
-  modules: [
-    '@nuxthq/ui',
-    '@nuxtjs/eslint-module',
-  ],
+  modules: ['@nuxthq/ui', '@nuxtjs/eslint-module'],
   typescript: {
     shim: false,
     strict: true,

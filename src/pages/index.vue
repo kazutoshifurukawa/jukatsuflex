@@ -1,10 +1,11 @@
-<script lang="ts" setup>
+<script setup lang="ts">
+const { data } = await useFetch('/api/hello')
 </script>
 
 <template>
   <div>
     <h1>
-      test
+      {{ data?.hello }}
     </h1>
   </div>
 </template>
