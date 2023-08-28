@@ -8,4 +8,8 @@ export default defineNuxtConfig({
     strict: true,
     typeCheck: false,
   },
+  ui: {
+    global: true,
+    icons: ['mdi'],
+  },
 })

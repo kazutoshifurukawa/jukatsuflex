@@ -12,6 +12,7 @@
     "lint:fix": "npm run lint -- --fix"
   },
   "devDependencies": {
+    "@iconify-json/mdi": "^1.1.54",
     "@nuxt/devtools": "latest",
     "@nuxthq/ui": "^2.5.0",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
