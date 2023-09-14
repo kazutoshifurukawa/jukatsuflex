@@ -26,9 +26,9 @@ async function getEstimate () {
 
 <template>
   <div>
-    <button @click="getEstimate">
+    <UButton @click="getEstimate">
       Get Estimate
-    </button>
+    </UButton>
     <pre>{{ estimateItem }}</pre>
   </div>
 </template>
