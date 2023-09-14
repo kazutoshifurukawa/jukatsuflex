@@ -2,7 +2,7 @@
 const config = useRuntimeConfig()
 const estimateItem: Ref<any> = ref(null)
 
-async function getEstimate() {
+async function getEstimate () {
   const { data, error } = await useFetch<any>(
     `${config.public.API_ENDPOINT}/estimate`,
     {
@@ -26,7 +26,9 @@ async function getEstimate() {
 
 <template>
   <div>
-    <button @click="getEstimate">Get Estimate</button>
+    <button @click="getEstimate">
+      Get Estimate
+    </button>
     <pre>{{ estimateItem }}</pre>
   </div>
 </template>
