@@ -12,4 +12,9 @@ export default defineNuxtConfig({
     global: true,
     icons: ['mdi'],
   },
+  runtimeConfig: {
+    public: {
+      API_ENDPOINT: process.env.API_ENDPOINT || '',
+    },
+  },
 })
