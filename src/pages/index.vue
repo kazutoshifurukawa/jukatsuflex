@@ -1,26 +1,13 @@
 <script setup lang="ts">
-const config = useRuntimeConfig()
-const estimateItem: Ref<any> = ref(null)
-
-async function getEstimate () {
-  const { data, error } = await useFetch<any>(
-    `${config.public.API_ENDPOINT}/estimate`,
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: new URLSearchParams({
-        fixpart: 'door,floor',
-      }),
-    },
-  )
-  if (error.value) {
-    // eslint-disable-next-line no-console
-    console.error(error.value)
-  } else {
-    estimateItem.value = data.value
-  }
+import { ref } from 'vue'
+import { EstimateResponse } from 'types/estimate'
+const estimate: Ref<EstimateResponse | {} | null | undefined> = ref()
+const getEstimate = async () => {
+  const { data } = await useFetch('/api/estimate', {
+    method: 'POST',
+    body: JSON.stringify({ fixpart: ['door', 'floor'] }),
+  })
+  estimate.value = data.value
 }
 </script>
 
@@ -29,6 +16,6 @@ async function getEstimate () {
     <UButton @click="getEstimate">
       Get Estimate
     </UButton>
-    <pre>{{ estimateItem }}</pre>
+    <pre>{{ estimate }}</pre>
   </div>
 </template>
